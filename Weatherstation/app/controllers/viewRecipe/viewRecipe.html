@@ -1,0 +1,19 @@
+<div ng-controller="ViewRecipeCtrl">
+  <h1>{{title}}, {{magnitude}} {{unit}}</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Serving Size</th>
+        <th>Serving Unit</th>
+        <th>Ingredient</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="ingredient in ingredients">
+        <td ng-bind="ingredient.amount * ingredient.weight_amount"></td>
+        <td ng-bind="ingredient.unit"></td>
+        <td ng-bind="ingredient.name" ng-click="viewIngredient(ingredient.id)"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

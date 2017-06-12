@@ -1,0 +1,26 @@
+<div ng-controller="MakeRecipeCtrl">
+  <h2 ng-bind="title"/>
+  <autocomplete
+    ng-model="query"
+    data="results"
+    on-type="updateResults">
+  </autocomplete>
+  <input ng-model="name"/>,
+  <input ng-model="servingSize"/> <input ng-model="unit"/>
+  <table>
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>No. Servings</th>
+        <th>Serving Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="food in foods">
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

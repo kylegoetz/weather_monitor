@@ -1,0 +1,26 @@
+<div>
+  <h1 ng-bind="ingredient.long_name"></h1>
+  <select
+    ng-model="selectedWeight"
+    ng-change="weightChange()">
+    <option value="0">Pick Weight</option>
+    <option ng-repeat="weight in weights" value="{{$index}}">
+      {{weight.amount}} {{weight.description}}
+    </option>
+  </select>
+  <table>
+    <thead>
+      <tr>
+        <th>Nutrient</th>
+        <th>Value</th>
+        <!--th ng-repeat="nutrient in nutrients">{{nutrient.name}}</th-->
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-if="nutrients" ng-repeat="nutrient in nutrients">
+        <td ng-bind="nutrient.name"></td>
+        <td><span ng-bind="(nutrient.value * hGmPortions / 100.0) | number: 2"></span> (<span ng-bind="nutrient.unit"></span>)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

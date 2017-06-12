@@ -1,0 +1,46 @@
+<div ng-controller="MakeIngredientCtrl">
+  {{title}}
+
+  <div>
+    Name<input ng-model="ingredient.name"/>
+  </div>
+  <div>
+    Price<input ng-model="ingredient.price"/>
+  </div>
+  <div>
+    Serving<input ng-model="ingredient.magnitude"/><input ng-model="ingredient.unit"/>
+  </div>
+  <div>
+    Grams
+    <input ng-model="ingredient.gm"/></span>
+  </div>
+
+  <button ng-click="addMeasure()">Add Measure</button>
+
+  <select ng-if="" ng-model="">
+    <option></option>
+  </select>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nutrient</th>
+        <th>Amount</th>
+        <th>Unit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="nutrient in nutrients">
+        <td ng-bind="nutrient.description"></td>
+        <td><input ng-model="nutrient.amount"></td>
+        <td>
+          <select ng-model="nutrient.unitOrPercent">
+            <option ng-bind="nutrient.units" ng-value="nutrient.unit"></option>
+            <option value="%">%</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button ng-click="save()">Save</button>
+</div>
